@@ -8,6 +8,7 @@ from apps.core.models import Customer, Technician
 class Ticket(AuditModel):
     code = models.CharField(max_length=20, unique=True)
     description = models.TextField()
+    status = models.CharField(max_length=10, null=True)
 
     customer = models.ForeignKey(
         Customer,
